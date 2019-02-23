@@ -1,0 +1,17 @@
+<resources>
+    <string name="mis_action_button_string">%1$s(%2$d/%3$d)</string>
+    <string name="mis_action_done">Выбрать</string>
+    <string name="mis_error_image_not_exist">Ошибка фотографии</string>
+    <string name="mis_error_no_permission">Нет доступа</string>
+    <string name="mis_folder_all">Все фотографии</string>
+    <string name="mis_msg_amount_limit">Выбрано максимальное количество фотографий</string>
+    <string name="mis_msg_no_camera">Камера не найдена</string>
+    <string name="mis_permission_dialog_cancel">ОТМЕНА</string>
+    <string name="mis_permission_dialog_ok">OK</string>
+    <string name="mis_permission_dialog_title">Доступ запрещен</string>
+    <string name="mis_permission_rationale">Необходимо разрешение на чтение файлов.</string>
+    <string name="mis_permission_rationale_write_storage">Необходимо разрешение на сохранение фотографий.</string>
+    <string name="mis_photo_unit">Кадр</string>
+    <string name="mis_preview">Предпросмотр</string>
+    <string name="mis_tip_take_photo">Сделать фото</string>
+</resources>

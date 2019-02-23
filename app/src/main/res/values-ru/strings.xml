@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MultiImageSelector</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="select_mode">Выбор режима</string>
+    <string name="mode_single">Одиночный выбор</string>
+    <string name="mode_multi">Множественный выбор</string>
+    <string name="max_select_amount">Максимальное выбранное количество</string>
+    <string name="hint_default_amount">по умолчанию выбрано 9</string>
+    <string name="enable_camera">Активировать камеру</string>
+    <string name="enable">Да</string>
+    <string name="disable">Нет</string>
+    <string name="go_select">Выбрать</string>
+
+</resources>

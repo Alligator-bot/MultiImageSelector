@@ -21,6 +21,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
+import android.support.v4.content.FileProvider;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ListPopupWindow;
@@ -174,9 +175,9 @@ public class MultiImageSelectorFragment extends Fragment {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
                 if (scrollState == SCROLL_STATE_FLING) {
-                    Picasso.with(view.getContext()).pauseTag(TAG);
+                    Picasso.get().pauseTag(TAG);
                 } else {
-                    Picasso.with(view.getContext()).resumeTag(TAG);
+                    Picasso.get().resumeTag(TAG);
                 }
             }
 
@@ -317,7 +318,10 @@ public class MultiImageSelectorFragment extends Fragment {
                     e.printStackTrace();
                 }
                 if (mTmpFile != null && mTmpFile.exists()) {
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
+                    Uri outputFileUri = FileProvider.getUriForFile(getContext(), getContext().getApplicationContext().getPackageName() + ".fileprovider", mTmpFile);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
                     startActivityForResult(intent, REQUEST_CAMERA);
                 } else {
                     Toast.makeText(getActivity(), R.string.mis_error_image_not_exist, Toast.LENGTH_SHORT).show();
